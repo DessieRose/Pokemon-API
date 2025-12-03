@@ -81,28 +81,66 @@ section p {
 
 .pokemon-card {
     background-color: green;
-    width: 27vw;
-    height: 50vh;
-    border-radius: 6px;
-
+    width: 100%;
+    height: 95%;
+    /* padding: 0.4rem; */
+    border-radius: 35px 0 35px 0;
 }
 
 .top-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 10%;
+    float: right;
+    width: 90%;
+    align-items: center;
 }
 
 .top-section p {
-    font-size: 1vw;
-    margin-top: 0.2rem;
+    font-size: 1.5vw;
 }
+
+.poke-name {
+ 
+}
+
+.poke-hp {
+
+}
+
+.type-icon {
+    float: right;
+    width: 15%;
+}
+
+.top-section p {
+    font-family: "Puritan", sans-serif;
+    font-weight: 400;
+}
+
+.img-section {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    border: 2px solid silver;
+    height: 40%;
+    margin: 0 auto;
+    border-radius: 0.3rem
+    /* max-width: 70%; */
+}
+
+
 
 .middle-section {
     display: flex;
+    font-size: 1vw;
     justify-content: center;
+    background-color: silver;
+    width: 95%;
+    height: 5%;
+    gap: 1.5vw;
+    align-items: center;
+    border-radius: 1rem;
 }
 
-.middle-section img {
-    max-width: 70%;
 
-}
