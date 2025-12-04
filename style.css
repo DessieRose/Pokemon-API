@@ -4,47 +4,66 @@
 }
 
 :root {
-    --yellow: rgb(255, 217, 0);
-    --blue: rgb(37, 90, 182);
+    --bug: rgb(18, 112, 18);
+    --dark: rgb(29, 24, 137);
+    --dragon: rgb(181, 173, 56);
+    --electric: rgb(236, 214, 85);
+    --fairy: rgb(240, 170, 182);
+    --fighting: #b64405;
+    --fire: #ca070b;
+    --flying: rgb(104, 180, 238);
+    --ghost: rgb(76, 14, 26);
+    --grass: rgb(71, 192, 55);
+    --ground: rgb(230, 143, 29);
+    --ice: rgb(66, 197, 220);
+    --normal: #666666;
+    --poison: rgb(137, 37, 129);
+    --psychic: rgb(100, 23, 116);
+    --rock: #6f6156;
+    --steel: rgb(156, 177, 192);
+    --water: #0051c7;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--yellow);
+    background-color: var(--electric);
+    font-family: "Puritan", sans-serif;
 }
+
+ul {
+    padding: 0;
+}
+
 header {
     background-color: white;
-    height: 15%;
+    height: 25vh;
+    width: 100%;
 }
 
 header img {
     display: flex;
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    /* margin: 0 auto; */
+    object-fit: contain;
 }
 
 main {
     display: grid;
     align-items: center;
-    grid-template-columns: auto auto;
-}
-
-section h1 {
-    font-family: Pokemon;
-    color: var(--blue);
-    text-align: center;
-    margin: 0.5rem 0 0 0;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
 }
 
 section p {
-    color: var(--blue);
+    color: var(--water);
     text-align: center;
     margin-top: 0;
 }
 
 .pokeball {
-    max-width: 50%;
+    max-width: 35%;
     cursor: pointer;
     /* margin: 0 auto; */
 }
@@ -61,9 +80,27 @@ section p {
     align-items: stretch;
 }
 
+.pokeball-container h1 {
+    font-family: Pokemon;
+    font-size: 3rem;
+    color: var(--water);
+    text-align: center;
+    margin: 0.5rem 0 0 0;
+}
+
 .pokeball-container p {
-    font-size: 12px;
-    gap: 1rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.pokeball-container button {
+    font-size: 1rem;
+    color: var(--water);
+    text-align: center;
+    margin-top: 2.5rem;
+    border-radius: 5rem;
+    padding: 0.4rem 1rem;
+    border: none;
 }
 
 .welcome-container {
@@ -74,49 +111,51 @@ section p {
 .pokemon-card-container {
     width: 27vw;
     height: 50vh;
-    background-color: silver;
+    background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
     border-radius: 6px;
     padding: 0.4rem;
 }
 
 .pokemon-card {
-    background-color: green;
+    display: flex;
+    background-color: var(--bug);
     width: 100%;
     height: 95%;
     /* padding: 0.4rem; */
     border-radius: 35px 0 35px 0;
+    flex-direction: column;
+    align-items: center;
 }
 
 .top-section {
     display: flex;
-    justify-content: space-between;
     height: 10%;
-    float: right;
-    width: 90%;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 
 .top-section p {
     font-size: 1.5vw;
+    
+}
+
+.top-div-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
 }
 
 .poke-name {
- 
-}
-
-.poke-hp {
-
+    font-weight: 700;
+    margin-left: 1rem;
 }
 
 .type-icon {
-    float: right;
-    width: 15%;
+    width: 4vw;
 }
 
-.top-section p {
-    font-family: "Puritan", sans-serif;
-    font-weight: 400;
-}
 
 .img-section {
     display: flex;
@@ -129,18 +168,41 @@ section p {
     /* max-width: 70%; */
 }
 
+.poke-img {
+    position: absolute;
+    width: 13%;
+}
 
+.habitat-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
 
 .middle-section {
     display: flex;
-    font-size: 1vw;
+    font-size: 0.7vw;
     justify-content: center;
-    background-color: silver;
+    background-image: linear-gradient(rgb(160, 160, 160), rgb(220, 220, 220), rgb(117, 117, 117));
     width: 95%;
-    height: 5%;
+    height: 3%;
     gap: 1.5vw;
     align-items: center;
     border-radius: 1rem;
 }
 
+.bottom-section {
+    padding: 0 1rem;
+}
 
+
+.ability-des-strong {
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.ability-description {
+    list-style-type: none;
+    font-size: 0.9rem;
+}
