@@ -1,6 +1,5 @@
 const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/';
 const pokemonSpeciesUrl = 'https://pokeapi.co/api/v2/pokemon-species/';
-// const pokemonAbilityUrl = 'https://pokeapi.co/api/v2/ability/{ability_name}/';
 
 const pokeball = document.querySelector('#pokeball');
 const pokemonCard = document.querySelector('.pokemon-card');
@@ -11,16 +10,15 @@ const bottomSection = document.querySelector('.bottom-section');
 
 const getRandomId = () => Math.floor(Math.random() * 1025) + 1;
 
-
 const fetchAbilityDetails = async (abilityName) => {
     const res = await fetch(`https://pokeapi.co/api/v2/ability/${abilityName}`);
     const data = await res.json();
     
-    // Get English ability description
+    // Get english ability description
     const description = data.effect_entries.find(
         e => e.language.name === "en"
     ).short_effect;
-
+    
     return description;
 }
 
@@ -57,13 +55,12 @@ const habitatImages = {
 //     water: "components/images/energy-icons/water.png",
 // }
 
-const fetchPokemon = async () => {
+const fetchPokemon = async (id) => {
     try {
         const id = getRandomId();
 
          // Fetch main Pokémon data
         const pokemonRes = await fetch(pokemonUrl + id);
-        // const response = await fetch(pokemonUrl);
         const pokemon = await pokemonRes.json();
     
         // Fetch species data
@@ -72,21 +69,27 @@ const fetchPokemon = async () => {
 
         // Type icon
         const typeName = pokemon.types[0].type.name;
-        // const energies = pokemon.types.map(t => t.type.name);
         const typeIcon = `components/images/type-icons/${typeName}.png`;
-        // const energyIcon = `./components/images/energy-icons${energyIcon}.png`; 
 
         // Pokemon name
         const pokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
         // Pokemon habitat
-        const habitat = species.habitat?.name || "unknown";
-        const habitatImage = habitatImages[habitat] || habitatImages["unknown"];
+        const isWaterType = pokemon.types.some(t => t.type.name === "water");
+        let habitatName = species?.habitat?.name || "unknown";
+        let habitatImage;
+
+        if (isWaterType) {
+            // habitatName = "waters-edge";
+            habitatImage = habitatImages["waters-edge"] || habitatImages["unknown"];
+        } else {
+            habitatImage = habitatImages[habitatName] || habitatImages["unknown"];
+        }
+        
 
         // Background color change depending on icon
-        const cardBackground = pokemonCard.style.backgroundColor = `var(--${typeName})`;
+       pokemonCard.style.backgroundColor = `var(--${typeName})`;
        
-        // const changeBackgroundColor = cardBackground
 
         // Top section (Name, HP, Type)
         topSection.innerHTML = `
@@ -101,7 +104,7 @@ const fetchPokemon = async () => {
         imgSection.innerHTML = `
             <img src="${pokemon.sprites.other.home.front_default}" 
                 alt="${pokemon.name}" class="poke-img">
-            <img src="${habitatImage}" class="habitat-img" alt="${habitat} background">
+            <img src="${habitatImage}" class="habitat-img" alt="${habitatName} background">
         `;
 
         // Middle section (Height / Weight / Species)
@@ -123,19 +126,31 @@ const fetchPokemon = async () => {
 
         bottomSection.innerHTML = `
              <ul>
-                ${pokemon.abilities.map((a, index) =>
-                    `<li class="ability-des-strong">${a.ability.name}</li>
-                    <li class="ability-description" >${abilityDescriptions[index]}</li>`)
+                ${pokemon.abilities
+                    .slice(0, 2)
+                    .map((a, index) =>
+                    `<li class="ability-des-strong">
+                    ${a.ability.name.charAt(0).toUpperCase() + a.ability.name.slice(1)}
+                    </li>
+                    <li class="ability-description">
+                    ${abilityDescriptions[index]}</li>`)
                 .join("")}
-            </ul>
-            
+            </ul>  
         `;
+
     } catch (error) {
         console.error("Error fetching Pokémon:", error);
     }
 };
 
-pokeball.addEventListener('click', fetchPokemon);
+// Show Pikachu on first load
+window.addEventListener("DOMContentLoaded", () => {
+    fetchPokemon(25);
+});
+
+pokeball.addEventListener('click', () => {
+    fetchPokemon();
+});
 
 
 

@@ -4,42 +4,52 @@
 }
 
 :root {
-    /* --bug: rgb(129, 209, 64);
-    --dark: rgb(29, 24, 137);
-    --dragon: rgb(199, 174, 63);
-    --electric: rgb(236, 214, 85);
-    --fairy: rgb(240, 170, 182);
-    --fighting: #b64405;
-    --fire: #ca070b;
-    --flying: rgb(104, 180, 238);
-    --ghost: rgb(76, 14, 26);
-    --grass: rgb(124, 169, 56);
-    --ground: rgb(230, 143, 29);
-    --ice: rgb(66, 197, 220);
-    --normal: #666666;
-    --poison: rgb(137, 37, 129);
-    --psychic: rgb(100, 23, 116);
-    --rock: #6f6156;
-    --steel: rgb(156, 177, 192);
-    --water: #0051c7; */
+    --background: #0f1724;
 
-    --fire: #f08030;
-    --water: #6890f0;
-    --grass: #78c850;
-    --electric: #f8d030;
-    --psychic: #f85888;
-    --normal: #a8a878;
-    --dark: #705848;
-    --steel: #b8b8d0;
+    /* --bug: #78c850;; */
+    /* --dark: #705848;
     --dragon: #7038f8;
+    --electric: #f8d030;
     --fairy: #ee99ac;
     --fighting: #c03028;
+    --fire: #f08030;
+    --flying: rgb(104, 180, 238);
+    --ghost: rgb(76, 14, 26);
+    --grass: #78c850;
+    --ground: rgb(230, 143, 29);
+    --ice: rgb(66, 197, 220);
+    --normal: #a8a878;
+    --poison: rgb(137, 37, 129);
+    --psychic: #f85888;
+    --rock: #6f6156;
+    --steel: #b8b8d0;
+    --water: #6890f0; */
+
+    --bug: #A8C96F;
+    --dark: #8B8E99;
+    --dragon: #D89358;
+    --electric: #E7D76A;
+    --fairy: #D9A6C9;
+    --fighting: #C57A58;
+    --fire: #e8675b;
+    --flying: #90B8CF;
+    --ghost: #A08BBE;
+    --grass: #7EBE78;
+    --ground: #C7B27A;
+    --ice: #9DCBDA;
+    --normal: #b5c3c6;
+    --poison: #B47AC8;
+    --psychic: #E199A6;
+    --rock: #B5A477;
+    --sound: #88A3D9;
+    --steel: #B4BDC8;
+    --water: #72B6E3;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    background-color: var(--electric);
+    padding-bottom: 40px;
+    background-color: var(--background);
     font-family: "Puritan", sans-serif;
 }
 
@@ -47,7 +57,19 @@ ul {
     padding: 0;
 }
 
-header {
+hr {
+    border-radius: 5px;
+    height: 5px;
+    width: 95%;
+    background: white;
+    border: none;
+    background-image: linear-gradient(rgb(157 157 157), rgb(245 245 245), rgb(157 157 157));
+    box-shadow: inset 0px -1px 3px -1px #404040;
+    margin: 0;
+    z-index: 1;
+}
+
+/* header {
     background-color: white;
     height: 25vh;
     width: 100%;
@@ -57,9 +79,9 @@ header img {
     display: flex;
     width: 100%;
     height: 100%;
-    /* margin: 0 auto; */
+    /* margin: 0 auto;
     object-fit: contain;
-}
+} */
 
 main {
     display: grid;
@@ -90,26 +112,29 @@ section p {
     display: grid;
     justify-items: center;
     align-items: stretch;
+    
 }
 
 .pokeball-container h1 {
     font-family: Pokemon;
-    font-size: 3rem;
-    color: var(--water);
+    font-size: 4rem;
+    color: var(--electric);
     text-align: center;
-    margin: 0.5rem 0 0 0;
+    margin: 2rem 0 0 0;
 }
 
 .pokeball-container p {
     font-size: 1rem;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .pokeball-container button {
+    position: relative;
     font-size: 1rem;
-    color: var(--water);
+    color: var(--background);
     text-align: center;
-    margin-top: 2.5rem;
+    margin: 2.5rem;
     border-radius: 5rem;
     padding: 0.4rem 1rem;
     border: none;
@@ -126,12 +151,13 @@ section p {
     background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
     border-radius: 6px;
     padding: 0.4rem;
+    margin-top: 2rem;
     /* background-image: url(components/images/textures/pokemon_card_backside.png); */
 }
 
 .pokemon-card {
     display: flex;
-    background-color: var(--bug);
+    /* background-color: var(--bug); */
     width: 100%;
     height: 95%;
     /* padding: 0.4rem; */
@@ -205,6 +231,7 @@ section p {
     position: absolute;
     width: 45%;
     margin-top: 1rem;
+    filter: drop-shadow(0 20px 30px rgba(15, 23, 42, 0.3));
 }
 
 .habitat-img {
@@ -230,6 +257,7 @@ section p {
 .bottom-section {
     padding: 0 1rem;
     z-index: 1;
+    width: 90%;
 }
 
 
@@ -242,4 +270,38 @@ section p {
 .ability-description {
     list-style-type: none;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        height: 15vh;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        justify-content: space-evenly;
+    }
+
+    .pokemon-card-container {
+        margin: 0 auto;
+        width: 350px;
+        height: 520px;
+    }
+
+    .top-section p {
+        font-size: 4.5vw;
+    }
+
+    .energy-types {
+        width: 7.8vw;
+    }
+
+    .ability-des-strong {
+        font-size: 4vw;
+    }
+
+    .middle-section {
+        font-size: 2.3vw;
+    }
 }
