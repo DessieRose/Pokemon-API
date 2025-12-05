@@ -4,16 +4,16 @@
 }
 
 :root {
-    --bug: rgb(18, 112, 18);
+    /* --bug: rgb(129, 209, 64);
     --dark: rgb(29, 24, 137);
-    --dragon: rgb(181, 173, 56);
+    --dragon: rgb(199, 174, 63);
     --electric: rgb(236, 214, 85);
     --fairy: rgb(240, 170, 182);
     --fighting: #b64405;
     --fire: #ca070b;
     --flying: rgb(104, 180, 238);
     --ghost: rgb(76, 14, 26);
-    --grass: rgb(71, 192, 55);
+    --grass: rgb(124, 169, 56);
     --ground: rgb(230, 143, 29);
     --ice: rgb(66, 197, 220);
     --normal: #666666;
@@ -21,7 +21,19 @@
     --psychic: rgb(100, 23, 116);
     --rock: #6f6156;
     --steel: rgb(156, 177, 192);
-    --water: #0051c7;
+    --water: #0051c7; */
+
+    --fire: #f08030;
+    --water: #6890f0;
+    --grass: #78c850;
+    --electric: #f8d030;
+    --psychic: #f85888;
+    --normal: #a8a878;
+    --dark: #705848;
+    --steel: #b8b8d0;
+    --dragon: #7038f8;
+    --fairy: #ee99ac;
+    --fighting: #c03028;
 }
 
 body {
@@ -114,6 +126,7 @@ section p {
     background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
     border-radius: 6px;
     padding: 0.4rem;
+    /* background-image: url(components/images/textures/pokemon_card_backside.png); */
 }
 
 .pokemon-card {
@@ -125,6 +138,22 @@ section p {
     border-radius: 35px 0 35px 0;
     flex-direction: column;
     align-items: center;
+    box-shadow: inset 0px 0px 2px black;
+    position: relative;       
+    overflow: hidden;  
+}
+
+.overlay{
+    mix-blend-mode: soft-light;
+    position: absolute;  
+    z-index: 0;  
+  
+}
+
+.overlay img {
+    height: 100%;
+    transform: rotate(90deg);
+
 }
 
 .top-section {
@@ -133,6 +162,7 @@ section p {
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .top-section p {
@@ -144,7 +174,7 @@ section p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
+    gap: 0.5rem;
 }
 
 .poke-name {
@@ -152,8 +182,9 @@ section p {
     margin-left: 1rem;
 }
 
-.type-icon {
-    width: 4vw;
+.energy-types {
+    width: 2.8vw;
+    margin-right: 0.4rem;
 }
 
 
@@ -164,13 +195,16 @@ section p {
     border: 2px solid silver;
     height: 40%;
     margin: 0 auto;
-    border-radius: 0.3rem
+    border-radius: 0.3rem;
+    box-shadow: inset 0px -1px 3px -1px #404040;
+    z-index: 1;
     /* max-width: 70%; */
 }
 
 .poke-img {
     position: absolute;
-    width: 13%;
+    width: 45%;
+    margin-top: 1rem;
 }
 
 .habitat-img {
@@ -184,15 +218,18 @@ section p {
     font-size: 0.7vw;
     justify-content: center;
     background-image: linear-gradient(rgb(160, 160, 160), rgb(220, 220, 220), rgb(117, 117, 117));
+    box-shadow: inset 0px -1px 3px -1px #404040;
     width: 95%;
     height: 3%;
     gap: 1.5vw;
     align-items: center;
     border-radius: 1rem;
+    z-index: 1;
 }
 
 .bottom-section {
     padding: 0 1rem;
+    z-index: 1;
 }
 
 
