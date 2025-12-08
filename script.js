@@ -34,30 +34,9 @@ const habitatImages = {
     unknown: "components/images/habitats/default.jpg"  // fallback
 };
 
-// const typeIcons = {
-//     bug: "components/images/energy-icons/grass.png",
-//     dark: "components/images/energy-icons/darkness.png",
-//     dragon: "components/images/energy-icons/dragon.png",
-//     electric: "components/images/energy-icons/lightning.png",
-//     fairy: "components/images/energy-icons/fairy.png",
-//     fighting: "components/images/energy-icons/fighting.png",
-//     fire: "components/images/energy-icons/fire.png",
-//     flying: "components/images/energy-icons/",
-//     ghost: "components/images/energy-icons/.png",
-//     grass: "components/images/energy-icons/grass.png",
-//     ground: "components/images/energy-icons/fighting.png",
-//     ice: "components/images/energy-icons/water.png",
-//     normal: "components/images/energy-icons/colorless.png",
-//     poison: "components/images/energy-icons/.png",
-//     psychic: "components/images/energy-icons/psychic.png",
-//     rock: "components/images/energy-icons/fighting.png",
-//     steel: "components/images/energy-icons/metal.png",
-//     water: "components/images/energy-icons/water.png",
-// }
-
 const fetchPokemon = async (id) => {
     try {
-        const id = getRandomId();
+        if (!id) id = getRandomId();
 
          // Fetch main Pokémon data
         const pokemonRes = await fetch(pokemonUrl + id);
@@ -152,5 +131,24 @@ pokeball.addEventListener('click', () => {
     fetchPokemon();
 });
 
+// DropDown Menu
+document.querySelectorAll("#dropdown a").forEach(item => {
+    item.addEventListener('click', function () {
+        const chosenId = this.dataset.id;
 
+        fetchPokemon(chosenId);
+
+        document.getElementById("dropdown").classList.remove("show");
+    });
+});
+
+function selectdropdown () {
+    document.getElementById("dropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.closest('.dropdown') && !event.target.matches('.dropbtn')) {
+        document.getElementById("dropdown").classList.remove("show");
+    }
+}
 

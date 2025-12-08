@@ -129,7 +129,7 @@ section p {
     color: white;
 }
 
-.pokeball-container button {
+/* .pokeball-container button {
     position: relative;
     font-size: 1rem;
     color: var(--background);
@@ -138,7 +138,7 @@ section p {
     border-radius: 5rem;
     padding: 0.4rem 1rem;
     border: none;
-}
+} */
 
 .welcome-container {
     margin-left: 3rem;
@@ -271,6 +271,56 @@ section p {
     list-style-type: none;
     font-size: 0.9rem;
     margin-bottom: 1rem;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #db3434;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: 2.5rem;
+    border-radius: 5rem;
+}
+
+  /* Dropdown button on hover & focus */
+.dropbtn:hover {
+    background-color: #932020;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display:block;
+    z-index: 10;
 }
 
 @media screen and (max-width: 700px) {
