@@ -2,7 +2,6 @@
 
 A dynamic, animated Pokémon card app powered by the PokéAPI
 
--
 
 ## 📌 Project Overview
 
@@ -19,7 +18,6 @@ Each Pokémon card includes:
 
 This project blends HTML, CSS, and JavaScript with API data to create a smooth, interactive experience.
 
----
 
 ## 🧩 Features
 
@@ -75,7 +73,6 @@ The entire card background color adapts to the Pokémon’s primary type (Fire, 
 
 - Layout rearranges cleanly across breakpoints
 
----
 
 ### 🛠️ Tech Stack
 
@@ -114,7 +111,6 @@ The DOM updates sections for:
 - Background images
 - Type visual theme
 
----
 
 ## 🚀 Getting Started
 
