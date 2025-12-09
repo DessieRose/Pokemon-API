@@ -146,12 +146,12 @@ section p {
 }
 
 .pokemon-card-container {
-    width: 27vw;
-    height: 50vh;
+    width: 220px;
+    height: 340px;
     background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
     border-radius: 6px;
     padding: 0.4rem;
-    margin-top: 2rem;
+    margin: 0 auto;
     /* background-image: url(components/images/textures/pokemon_card_backside.png); */
 }
 
@@ -192,7 +192,7 @@ section p {
 }
 
 .top-section p {
-    font-size: 1.5vw;
+    font-size: 0.8rem;
     
 }
 
@@ -209,7 +209,7 @@ section p {
 }
 
 .energy-types {
-    width: 2.8vw;
+    width: 23px;
     margin-right: 0.4rem;
 }
 
@@ -242,7 +242,7 @@ section p {
 
 .middle-section {
     display: flex;
-    font-size: 0.7vw;
+    font-size: 0.3rem;
     justify-content: center;
     background-image: linear-gradient(rgb(160, 160, 160), rgb(220, 220, 220), rgb(117, 117, 117));
     box-shadow: inset 0px -1px 3px -1px #404040;
@@ -264,25 +264,28 @@ section p {
 .ability-des-strong {
     list-style-type: none;
     font-weight: 700;
-    font-size: 1.5vw;
+    font-size: 0.8rem;
 }
 
 .ability-description {
     list-style-type: none;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #db3434;
+       background-color: #db3434;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin: 2.5rem;
+    margin: 1rem 0;
     border-radius: 5rem;
+    z-index: 5;
+    position: relative;
+    box-shadow: 0px 2px 5px black;
 }
 
   /* Dropdown button on hover & focus */
@@ -297,17 +300,36 @@ section p {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
     position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    min-width: 160px;
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
+    overflow: hidden;
+
+    /* Animation properties */
+    max-height: 0;  
+    opacity: 0;
+    transform: scaleY(0.85);       /* adds the blind compress look */
+    transform-origin: top;  
+
+    transition:
+        max-height 350ms ease,
+        opacity 220ms ease,
+        transform 300ms cubic-bezier(.25,.9,.25,1);
 }
+
+/* .dropdown-content.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+} */
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -315,15 +337,27 @@ section p {
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #db3434;
+    color: white;
+    cursor: pointer;
 }
 
 .show {
-    display:block;
-    z-index: 10;
+    /* display: block; */
+    z-index: 2;
+    margin: 0 0 1.5rem 0;
+    position: relative;
+    top: -44px;
+    padding: 2rem 0 0.5rem 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+
+    max-height: 500px;     
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: auto;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     header {
         height: 15vh;
     }
@@ -334,24 +368,33 @@ section p {
     }
 
     .pokemon-card-container {
-        margin: 0 auto;
+        position: static;
         width: 350px;
         height: 520px;
+        margin: 0 auto;
     }
 
     .top-section p {
-        font-size: 4.5vw;
+        font-size: 1.5rem;
     }
 
     .energy-types {
-        width: 7.8vw;
+        width: 36px;
     }
 
     .ability-des-strong {
-        font-size: 4vw;
+        font-size: 1.3rem;
+    }
+
+    .ability-description {
+        font-size: 0.9rem;
     }
 
     .middle-section {
-        font-size: 2.3vw;
+        font-size: 0.6rem;
     }
+
+    /* .dropdown {
+        position: static;
+    } */
 }
