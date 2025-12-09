@@ -2,7 +2,7 @@
 
 A dynamic, animated Pokémon card app powered by the PokéAPI
 
----
+-
 
 ## 📌 Project Overview
 
