@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pokemon</title>
+</head>
+<body>
+    <!-- <header>
+        <img src="https://wallpapers.com/images/featured/pokemon-background-17x8jxp3vmf1tef0.jpg" alt="pokemon image">
+    </header> -->
+
+    <main>
+        <div class="pokeball-container">
+            <h1>Welcome!</h1>
+            <p>Click on the ball to get a pokemon</p>
+            <img class="pokeball" id="pokeball" src="./components/images/Poke_Ball.jpg" alt="pokomon ball">
+            <!-- <button>Chose a pokemon</button> -->
+            <div class="dropdown">
+                <button onclick="selectdropdown()" class="dropbtn">Choose Pokemon &#11107;</button>
+                <div id="dropdown" class="dropdown-content">
+                    <a data-id="25">Pikachu</a>
+                    <a data-id="4">Charmander</a>
+                    <a data-id="7">Squirtle</a>
+                    <a data-id="1">Bulbasaur</a>
+                    <a data-id="6">Charizard</a>
+                    <a data-id="9">Blastoise</a>
+                    <a data-id="3">Venusaur</a>
+                    <a data-id="131">Lapras</a>
+                    <a data-id="150">Mewtwo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pokemon-card-container">
+            <div class="pokemon-card">
+                <div class="overlay"><img src="components/images/textures/cement-wall.jpg"></div>
+                <div class="top-section"></div>
+                <div class="img-section"></div>
+                <div class="middle-section"></div>
+                <div class="bottom-section"></div>
+                <hr>
+            </div>
+        </div>
+
+       
+    </main>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(./components/fonts/pokemon/Pokemon\ Hollow.ttf);
+}
+
+:root {
+    --background: #0f1724;
+    --button: #db3434;
+    --buttonHover: #932020;
+
+    --bug: #A8C96F;
+    --dark: #8B8E99;
+    --dragon: #D89358;
+    --electric: #E7D76A;
+    --fairy: #D9A6C9;
+    --fighting: #C57A58;
+    --fire: #e8675b;
+    --flying: #90B8CF;
+    --ghost: #A08BBE;
+    --grass: #7EBE78;
+    --ground: #C7B27A;
+    --ice: #9DCBDA;
+    --normal: #b5c3c6;
+    --poison: #B47AC8;
+    --psychic: #E199A6;
+    --rock: #B5A477;
+    --sound: #88A3D9;
+    --steel: #B4BDC8;
+    --water: #72B6E3;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 2.5rem;
+    background-color: var(--background);
+    font-family: "Puritan", sans-serif;
+}
+
+ul {
+    padding: 0;
+}
+
+hr {
+    border-radius: 5px;
+    height: 5px;
+    width: 95%;
+    background: white;
+    border: none;
+    background-image: linear-gradient(rgb(157 157 157), rgb(245 245 245), rgb(157 157 157));
+    box-shadow: inset 0px -1px 3px -1px #404040;
+    margin: 0;
+    z-index: 1;
+}
+
+main {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    margin: 3rem;
+}
+
+section p {
+    color: var(--water);
+    text-align: center;
+    margin-top: 0;
+}
+
+.pokeball {
+    max-width: 35%;
+    cursor: pointer;
+    /* margin: 0 auto; */
+}
+
+.pokeball:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in;
+}
+
+.pokeball-container {
+    /* margin: 0 auto; */
+    display: grid;
+    justify-items: center;
+    align-items: stretch;
+    
+}
+
+.pokeball-container h1 {
+    font-family: Pokemon;
+    font-size: 4rem;
+    color: var(--electric);
+    text-align: center;
+    margin: 2rem 0 0 0;
+}
+
+.pokeball-container p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.welcome-container {
+    margin-left: 3rem;
+    width: 50%;
+}
+
+.pokemon-card-container {
+    width: 330px;
+    height: 510px;
+    background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
+    border-radius: 6px;
+    padding: 0.4rem;
+    margin: 0 auto;
+    /* background-image: url(components/images/textures/pokemon_card_backside.png); */
+}
+
+.pokemon-card {
+    display: flex;
+    /* background-color: var(--bug); */
+    width: 100%;
+    height: 95%;
+    /* padding: 0.4rem; */
+    border-radius: 35px 0 35px 0;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0px 0px 2px black;
+    position: relative;       
+    overflow: hidden;  
+}
+
+.overlay{
+    mix-blend-mode: soft-light;
+    position: absolute;  
+    z-index: 0;  
+  
+}
+
+.overlay img {
+    height: 100%;
+    transform: rotate(90deg);
+
+}
+
+.top-section {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.top-section p {
+    font-size: 1.3rem;
+    
+}
+
+.top-div-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.poke-name {
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.energy-types {
+    width: 35px;
+    margin-right: 0.4rem;
+}
+
+
+.img-section {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    border: 2px solid silver;
+    height: 40%;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    box-shadow: inset 0px -1px 3px -1px #404040;
+    z-index: 1;
+    /* max-width: 70%; */
+}
+
+.poke-img {
+    position: absolute;
+    width: 45%;
+    margin-top: 1rem;
+    filter: drop-shadow(0 20px 30px rgba(15, 23, 42, 0.3));
+}
+
+.habitat-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.middle-section {
+    display: flex;
+    font-size: 0.5rem;
+    justify-content: center;
+    background-image: linear-gradient(rgb(160, 160, 160), rgb(220, 220, 220), rgb(117, 117, 117));
+    box-shadow: inset 0px -1px 3px -1px #404040;
+    width: 95%;
+    height: 3%;
+    gap: 1.5vw;
+    align-items: center;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.bottom-section {
+    padding: 0 1rem;
+    z-index: 1;
+    width: 90%;
+}
+
+
+.ability-des-strong {
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.ability-description {
+    list-style-type: none;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: var(--button);
+    color: white;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin: 1rem 0;
+    border-radius: 5rem;
+    z-index: 5;
+    position: relative;
+    box-shadow: 0px 2px 5px black;
+}
+
+  /* Dropdown button on hover & focus */
+.dropbtn:hover {
+    background-color: var(--buttonHover);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 160px;
+    background-color: #f1f1f1;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    overflow: hidden;
+
+    /* Animation properties */
+    max-height: 0;  
+    opacity: 0;
+    transform: scaleY(0.85);       /* adds the blind compress look */
+    transform-origin: top;  
+
+    transition:
+        max-height 350ms ease,
+        opacity 220ms ease,
+        transform 300ms cubic-bezier(.25,.9,.25,1);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--button);
+    color: white;
+    cursor: pointer;
+}
+
+.show {
+    /* display: block; */
+    z-index: 2;
+    margin: 0 0 1.5rem 0;
+    /* position: relative; */
+    padding: 2rem 0 0.5rem 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    top: 2.5rem;
+    width: 100%;
+
+    max-height: 500px;     
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: auto;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 15vh;
+    }
+
+    main {
+        margin: 1rem;
+        grid-template-columns: 1fr;
+        justify-content: space-evenly;
+    }
+
+    .dropbtn {
+        padding: 1rem;
+        font-size: 1rem;
+        margin: 1rem 0;
+        border-radius: 5rem;
+    }
+
+    .pokemon-card-container {
+        position: static;
+        width: 350px;
+        height: 520px;
+        margin: 0 auto;
+    }
+
+    .pokeball-container h1 {
+        margin: 2rem 0 0 0;
+    }
+
+    .top-section p {
+        font-size: 1.5rem;
+    }
+
+    .energy-types {
+        width: 2.25rem;
+    }
+
+    .ability-des-strong {
+        font-size: 1.3rem;
+    }
+
+    .ability-description {
+        font-size: 0.9rem;
+    }
+
+    .middle-section {
+        font-size: 0.6rem;
+    }
+
+    .show {
+        top: 47px;
+        padding: 2rem 0 0.5rem 0;
+    }
+
+    .dropdown-content a {
+        padding: 12px 16px;
+        font-size: 1.1rem;
+    }
+}
