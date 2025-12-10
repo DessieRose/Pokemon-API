@@ -146,8 +146,8 @@ section p {
 }
 
 .pokemon-card-container {
-    width: 220px;
-    height: 340px;
+    width: 330px;
+    height: 510px;
     background-image: linear-gradient(to bottom right, rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160), rgb(220, 220, 220), rgb(160, 160, 160));
     border-radius: 6px;
     padding: 0.4rem;
@@ -277,8 +277,8 @@ section p {
 .dropbtn {
        background-color: #db3434;
     color: white;
-    padding: 8px;
-    font-size: 12px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
     border: none;
     cursor: pointer;
     margin: 1rem 0;
